@@ -1,4 +1,33 @@
 body{
   color: red;
-  background-color: black;
+  background-color: white;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+}
+.square{
+  overflow: auto;
+}
+
+td {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+}
+.main{
+  margin: 0 auto;
+  font-size: 10rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 600px;
+  height: 600px;
 }
