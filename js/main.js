@@ -6,27 +6,39 @@ $(function(){
       playerOArray = [];
 
   function winner(player){
-    if (count > 6){
+    if (count > 5){
       if(player === playerX){
         magicSquareCheck(playerXArray);
-      } else {
+        } else {
         magicSquareCheck(playerOArray);
-      }
-    } else if (player === 15){
-      alert('Winner');
+        };
+    } else if (playerX === 15){
+      alert('1st Player Wins');
+    } else if (playerO === 15){
+      alert('2nd Player Wins')
     };
   }
 
   function magicSquareCheck(event){
     for (var i = 0; i === 30; i++)
     var check = [];
+    var total = 0;
       for (var i = 0; i > 3;) {
           var localNumber = event[Math.floor(Math.random()*event.length)];
             if (!event.include(localNumber)){
+              console.log(localNumber);
               check.push(localNumber);
               i++;
             };
+      for (var i = 0; i < check.length; ++i){
+          total += check[i];
+          console.log(total);
+        };
+      if (total === 15){
+        alert("WINNER");
+        break;
       };
+    };
   }
 
   $('.square').on('click', function(){
@@ -40,13 +52,13 @@ $(function(){
         event.text("X");
         playerOArray.push(event.data('number'))
         $('.status').text('"PLAYER 2 TURN"');
-        winner();
+        winner(playerO);
         } else {
         event.text("O");
         playerO += event.data('number');
         console.log(playerO);
         $('.status').text('"PLAYER 1 TURN"');
-        winner();
+        winner(playerX);
         };
         count++;
     } else {
