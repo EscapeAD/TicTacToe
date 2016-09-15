@@ -7,11 +7,7 @@ $(function(){
 
   function winner(player){
     if (count > 5){
-      if(player === playerX){
-        magicSquareCheck(playerXArray);
-        } else {
-        magicSquareCheck(playerOArray);
-        };
+        magicSquareCheck(player);
     } else if (playerX === 15){
       alert('1st Player Wins');
     } else if (playerO === 15){
@@ -19,19 +15,27 @@ $(function(){
     };
   }
 
-  function magicSquareCheck(event){
-    for (var i = 0; i === 30; i++)
+  function magicSquareCheck(player){
+    var event = player;
+    if (player == playerX){
+        event = playerXArray;
+    } else {
+        event = playerOArray;
+    }
+    for (var i = 0; i > 30; i++)
     var check = [];
     var total = 0;
-      for (var i = 0; i > 3;) {
+      for (var i = 0; i > 3; i) {
           var localNumber = event[Math.floor(Math.random()*event.length)];
+          + Math.floor(Math.random() * 6);
             if (!event.include(localNumber)){
               console.log(localNumber);
               check.push(localNumber);
               i++;
             };
-      for (var i = 0; i < check.length; ++i){
+      for (var i = 0; i < check.length; i++){
           total += check[i];
+          console.log(check);
           console.log(total);
         };
       if (total === 15){
