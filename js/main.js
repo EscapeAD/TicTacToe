@@ -18,32 +18,47 @@ $(function(){
     return Math.floor(Math.random() * array.length)
   }
   function magicSquareCheck(player){
+
+
     var event = player;
-    if (player == playerX){
+    if (player === playerX){
         event = playerXArray;
     } else {
         event = playerOArray;
     }
-    for (var i = 0; i > 30; i++)
-    var check = new Array(3);;
-    var total = 0;
-      for (var i = 0; i > 3; i) {
-          var localNumber = event[random(event)];
-            if (!event.include(localNumber)){
-              console.log(localNumber);
-              check.push(localNumber);
-              i++;
-            };
-      for (var i = 0; i < check.length; i++){
-          total += check[i];
-          console.log(check);
-          console.log(total);
-        };
-      if (total === 15){
-        alert("WINNER");
-        break;
-      };
-    };
+    console.log(event);
+
+    for (var i = 0; i < event.length; i++){
+      // console.log('i loop');
+      for (var j = i+1; j < event.length; j++){
+        // console.log('j loop')
+        for (var k = j+1; k < event.length; k++){
+            console.log(event[i] + event[j] + event[k]);
+        }
+      }
+    }
+
+    // for (var i = 0; i > 30; i++){
+    //   var check = [];
+    //   var total = 0;
+    //   for (var i = 0; i > 2; i) {
+    //       var localNumber = event[random(event)];
+    //       if (!check.include(localNumber)){
+    //         console.log(localNumber);
+    //         check.push(localNumber);
+    //         i++;
+    //       };
+    //     };
+    //   for (var i = 0; i < check.length; i++){
+    //       total += check[i];
+    //       console.log(check);
+    //       console.log(total);
+    //     };
+    //   if (total === 15){
+    //     alert("WINNER");
+    //     break;
+    //   };
+    // };
   }
 
   $('.square').on('click', function(){
