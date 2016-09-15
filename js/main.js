@@ -19,7 +19,6 @@ $(function(){
   }
   function magicSquareCheck(player){
 
-
     var event = player;
     if (player === playerX){
         event = playerXArray;
@@ -33,7 +32,11 @@ $(function(){
       for (var j = i+1; j < event.length; j++){
         // console.log('j loop')
         for (var k = j+1; k < event.length; k++){
-            console.log(event[i] + event[j] + event[k]);
+          var total = (event[i] + event[j] + event[k])
+          if (total === 15){
+            alert("WINNER!!");
+            break;
+          }
         }
       }
     }
