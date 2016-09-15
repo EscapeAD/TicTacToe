@@ -14,7 +14,9 @@ $(function(){
       alert('2nd Player Wins')
     };
   }
-
+  function random(array){
+    return Math.floor(Math.random() * array.length)
+  }
   function magicSquareCheck(player){
     var event = player;
     if (player == playerX){
@@ -23,11 +25,10 @@ $(function(){
         event = playerOArray;
     }
     for (var i = 0; i > 30; i++)
-    var check = [];
+    var check = new Array(3);;
     var total = 0;
       for (var i = 0; i > 3; i) {
-          var localNumber = event[Math.floor(Math.random()*event.length)];
-          + Math.floor(Math.random() * 6);
+          var localNumber = event[random(event)];
             if (!event.include(localNumber)){
               console.log(localNumber);
               check.push(localNumber);
