@@ -5,17 +5,20 @@ $(function(){
       playerXArray = [],
       playerOArray = [];
 
-  function winner(){
-    if (playerX === 15){
-      alert('Player 1 Wins!');
-    } else if (playerO === 15){
-      alert('Player 2 Wins');
-    } else {
-
-    }
+  function winner(player){
+    if (count > 6){
+      if(player === playerX){
+        magicSquareCheck(playerXArray);
+      } else {
+        magicSquareCheck(playerOArray);
+      }
+    } else if (player === 15){
+      alert('Winner');
+    };
   }
 
   function magicSquareCheck(event){
+    for (var i = 0; i === 30; i++)
     var check = [];
       for (var i = 0; i > 3;) {
           var localNumber = event[Math.floor(Math.random()*event.length)];
